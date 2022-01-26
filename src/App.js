@@ -1,67 +1,84 @@
-import React, { Component } from 'react'
+import { useState, useEffect, useRef,Component } from "react";
+import ReactDOM from "react-dom";
+import Practice from "./component/Practice";
 import logo from './logo.svg';
 import './App.css';
-class App extends Component {
+import {Table} from 'react-bootstrap'
+import Users from "./component/Users";
+import Hook from "./component/Hook";
+import Prop from "./Practice/Prop";
+import Conditional from "./Practice/Conditional";
+import Propclass from "./Practice/Propclass";
+import Token from "./component/Token";
+function App() {
+const students=[
+  {name:"Abdul subhan", email:'mian@gmail.com', contact:1122},
+  {name:"Awais akhtar", email:'awais@gmail.com', contact:2233},
+  {name:"Abdul", email:'Abdul@gmail.com', contact:3422},
+]
+ return(
+   <div className="App">
+     <h1> Array with list</h1>
+     <Table striped variant="dark">
+       <tbody>
+     <tr>
+         <td>Name</td>
+         <td>Email</td>
+         <td>Contact</td>
+       </tr>
+     {
+       students.map((data,i)=>
 
-  constructor() {
-    super();
-    this.state = {
-      data: "subhan"
-    }
-  }
-  apple() {
-    this.setState({ date: this.state })
-  }
-  render() {
-    return (
-      <div className="App">
-        <h1>{this.state.data}</h1>
-        <button onClick={() => this.apple()}>update Data</button>
-      </div>
-    );
-  }
+       <tr key={i}>
+         <td>{data.name}</td>
+         <td>{data.email}</td>
+         <td>{data.contact}</td>
+       </tr>
+       )
+     }
+     </tbody> 
+     <Token />
+     </Table>
+     <Practice/>
+         <Users />
+         <Hook />
+         <Conditional />  
+         <Prop name={"Abdul"} email="mian@gmail.com" />
+         <Prop name={"Subhan"} email="mian@gmail.com"/>
+         <Prop name={"Sajid"} email="mian@gmail.com"/>
+   </div>
+ )
 }
+// class App extends Component {
 
-
-// function App() {
-//   const[data,setData]=useState("Abdul")
-//   function updateData()
-//   {
-//     setData("subhan")
+//   constructor() {
+//     super();
+//     this.state = {
+//       data: "Subhan"
+//     }
 //   }
-
-// let data="Subhan";
-// function updateData()
-// {
-//   data="Subhan";
-//   alert(data)
-// }
-//   return (
-//     <div className='App'>
-//       <h1>{data}</h1>
-//       <button onClick={updateData}>Update data</button>
-//     </div>
-//   );
-// }
-// import {User} from './User'
-// function App() {
-//     //  </NameList>
-//   var data="Abdul subhan";
-//   function subhan()
+//   apple() 
 //   {
-//     alert("This user is invalid");
-
+//     alert("This user is invalid")
+//     this.setState({ data:"My names " })
 //   }
-//   return(
-//      <div className="App">
-//        <h1>Name : Abdul subhan</h1>
-//        <h2>Class: Bs software Engineer</h2>
-//        <li>Email : mian8799@gmail.com</li>
-//        <li>Age : 20</li>
-//        <li>React component : Function component</li>
-//       <button onClick={subhan}>Click Me</button>
-//      </div>
-//   );
-// 
+//   render() {
+
+//     return (
+//       <div className="App">
+//         <h1>{this.state.data}</h1>
+//         <button onClick={() => this.apple()}>update Data</button>
+//         <br></br>
+//         <Practice/>
+//         <Users />
+//         <Hook />
+//         <Conditional />  
+//         <Prop name={"Abdul"} email="mian@gmail.com" />
+//         <Prop name={"Subhan"} email="mian@gmail.com"/>
+//         <Prop name={"Sajid"} email="mian@gmail.com"/>
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
