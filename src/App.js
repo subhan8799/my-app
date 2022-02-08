@@ -1,25 +1,26 @@
 import { useState, useEffect, useRef,Component } from "react";
 import ReactDOM from "react-dom";
-import Practice from "./component/Practice";
+// import Practice from "./component/Practice";
 import logo from './logo.svg';
 import './App.css';
 import {Table} from 'react-bootstrap'
-import Users from "./component/Users";
-import Hook from "./component/Hook";
-import Prop from "./Practice/Prop";
-import Conditional from "./Practice/Conditional";
-import Propclass from "./Practice/Propclass";
-import Token from "./component/Token";
+// import Users from "./component/Users";
+// import Hook from "./component/Hook";
+// import Prop from "./Practice/Prop";
+// import Conditional from "./Practice/Conditional";
+// import Propclass from "./Practice/Propclass";
+import Generator from "./component/Generator";
+// import Token from "./component/Token";
 function App() {
 const students=[
   {name:"Abdul subhan", email:'mian@gmail.com', contact:1122},
   {name:"Awais akhtar", email:'awais@gmail.com', contact:2233},
   {name:"Abdul", email:'Abdul@gmail.com', contact:3422},
 ]
- return(
+ return( 
    <div className="App">
-     <h1> Array with list</h1>
-     <Table striped variant="dark">
+     {/* <h1>Bootstrap Array with list</h1>
+     <Table striped variant="dark" style={{margin: '0 auto'}}>
        <tbody>
      <tr>
          <td>Name</td>
@@ -35,17 +36,18 @@ const students=[
          <td>{data.contact}</td>
        </tr>
        )
-     }
-     </tbody> 
-     <Token />
-     </Table>
-     <Practice/>
-         <Users />
-         <Hook />
-         <Conditional />  
-         <Prop name={"Abdul"} email="mian@gmail.com" />
+     } */}
+       {/* </tbody>  */}
+     {/* <Token /> */}
+     {/* </Table> */}
+     {/* <Practice/> */}
+         {/* <Users /> */}
+         {/* <Hook /> */}
+         {/* <Conditional />   */}
+         {/* <Prop name={"Abdul"} email="mian@gmail.com" />
          <Prop name={"Subhan"} email="mian@gmail.com"/>
-         <Prop name={"Sajid"} email="mian@gmail.com"/>
+         <Prop name={"Sajid"} email="mian@gmail.com"/> */}
+         <Generator />
    </div>
  )
 }
